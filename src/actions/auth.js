@@ -40,7 +40,7 @@ const storeAuthInfo = (authToken, dispatch) => {
 
 export const login = (username, password) => dispatch => {
   dispatch(authRequest());
-  return (fetch(`${API_BASE_URL}/api/login`, {
+  return (fetch(`${API_BASE_URL}/login`, {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({username, password})
@@ -62,7 +62,7 @@ export const login = (username, password) => dispatch => {
 export const refreshAuthToken = () => (dispatch, getState) => {
   dispatch(authRequest());
   const authToken = getState().auth.authToken;
-  return fetch(`${API_BASE_URL}/api/refresh`, {
+  return fetch(`${API_BASE_URL}/refresh`, {
     method: 'POST',
     headers: {Authorization: `Bearer ${authToken}`}
   })
