@@ -22,7 +22,7 @@ export const fetchCards = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   console.log('fetch cards');
   dispatch(fetchCardsRequest());
-  return fetch(`${API_BASE_URL}/api/cards`, {
+  return fetch(`${API_BASE_URL}/cards`, {
     method: 'GET', headers: {Authorization: `Bearer ${authToken}`}})
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
