@@ -17,6 +17,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const mainReducer = combineReducers({auth: authReducer, card: cardReducer, form: formReducer });
 
 const store = createStore(mainReducer, composeEnhancers(applyMiddleware(thunk)));
+//store.subscribe(() => console.log(store.getState()));
 
 // Hydrate the authToken from localStorage if it exists
 const authToken = loadAuthToken();
