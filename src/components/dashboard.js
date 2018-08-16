@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
 import RandomCard from './randomCard';
 import DeckForm from './deck-form';
+import DeckList from './deck-list';
 
 export function Dashboard(props) {
   return (
@@ -10,6 +11,7 @@ export function Dashboard(props) {
         <DeckForm />
         <div className="cards">
         <RandomCard />
+        <DeckList />
         </div>
     </div>
   );

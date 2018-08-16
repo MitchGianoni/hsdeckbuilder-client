@@ -5,7 +5,6 @@ export const FETCH_CARDS_REQUEST = 'FETCH_CARDS_REQUEST';
 export const fetchCardsRequest = () => ({
   type: FETCH_CARDS_REQUEST
 });
-
 export const FETCH_CARDS_SUCCESS = 'FETCH_CARDS_SUCCESS';
 export const fetchCardsSuccess = (cards) => ({
   type: FETCH_CARDS_SUCCESS,
