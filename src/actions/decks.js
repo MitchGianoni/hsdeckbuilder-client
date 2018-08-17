@@ -41,6 +41,7 @@ export const createDeck = deck => (dispatch, getState) => {
   })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
+    .then(() => dispatch(fetchDecks()))
     .catch(err => {
       const {reason, message, location} = err;
       if (reason === 'ValidationError') {

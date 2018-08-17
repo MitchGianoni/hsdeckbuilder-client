@@ -36,13 +36,13 @@ export const addCard = card => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   const currentDeck = getState().deck.currentDeck;
   console.log('adding card to deck..');
-  return fetch(`${API_BASE_URL}/${currentDeck}/cards`, {
+  return fetch(`${API_BASE_URL}/decks/${currentDeck}/cards`, {
     method: 'POST',
     headers: {
       'content-type': 'application/json',
       'Authorization': `Bearer ${authToken}`
     },
-    body: JSON.Stringify(card)
+    body: JSON.stringify(card)
   })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
@@ -52,4 +52,6 @@ export const addCard = card => (dispatch, getState) => {
         return Promise.reject(new SubmissionError({[location]: message}));
       }
     });
+
+    // dispatch an action and you get the current state via mapstateto props
 };

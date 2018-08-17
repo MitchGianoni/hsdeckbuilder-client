@@ -15,7 +15,7 @@ class DeckList extends Component {
   render() {
     const decks = this.props.decks;
     const listItems = decks.map((deck) => 
-      <li key={deck.id} onClick={() => this.clickHandler(deck.id)}>{deck.deckName} </li>);
+      <li key={deck.id} onClick={() => this.clickHandler(deck.id)}>{deck.deckName}<button>Rename</button><button>Delete</button></li>);
     return (
       <div>
         <h2>Decks!</h2>

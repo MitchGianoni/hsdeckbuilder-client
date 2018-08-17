@@ -12,7 +12,7 @@ class CardsInDeck extends Component {
     const selectedCard = this.props.cards.filter(card => {
       return card.id === this.props.currentCard;
     });
-    const rarity = selectedCard.rarity;
+    const rarity = selectedCard[0].data.rarity;
     const card = { card_id: this.props.currentCard, rarity: rarity };
     this.props.dispatch(addCard(card));
   }
@@ -31,8 +31,12 @@ class CardsInDeck extends Component {
   }
 }
 
+// when you click on a deck , dispatch an action with deck id that sets current deck in the state, when its in the state pull it into the component using
+// mapstate to props
 
 const mapStateToProps = state => ({
+  cards: state.card.cards,
+  currentCard: state.card.currentCard,
   cardsInDeck: state.cardsDecks.cardsInDeck
 });
 

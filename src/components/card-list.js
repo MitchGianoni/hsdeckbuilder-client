@@ -12,11 +12,13 @@ class CardList extends Component {
     this.props.dispatch(setSelectedCard(card_id));
   }
 
+  //        <img className="card" id={card.id} src={`https://art.hearthstonejson.com/v1/render/latest/enUS/256x/${card.data.id}.png`}
+  //        alt={card.data.name} title={card.data.flavor}/>
+
   render() {
     const cards = this.props.cards;
     const listItems = cards.map((card) => 
-      <li key={card.id} onClick={() => this.clickHandler(card.id)}>
-      {card.name}
+      <li key={card.id} onClick={() => this.clickHandler(card.id)}>{card.name}
       </li>);
     return (
       <div>
