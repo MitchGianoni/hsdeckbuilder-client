@@ -20,7 +20,6 @@ export const fetchDecksError = (error) => ({
 export const FETCH_DECKS = 'FETCH_DECKS';
 export const fetchDecks = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  console.log('fetch decks');
   dispatch(fetchDecksRequest());
   return fetch(`${API_BASE_URL}/decks`, {
     method: 'GET', headers: {Authorization: `Bearer ${authToken}`}})
@@ -34,7 +33,7 @@ export const createDeck = deck => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   return fetch(`${API_BASE_URL}/decks`, {
     method: 'POST',
-    headers : {
+    headers: {
       'content-type': 'application/json',
       'Authorization': `Bearer ${authToken}`
     },
@@ -49,3 +48,9 @@ export const createDeck = deck => (dispatch, getState) => {
       }
     });
 };
+
+export const SET_SELECTED_DECK = 'SET_SELECTED_DECK';
+export const setSelectedDeck = (deck_id) => ({
+  type: SET_SELECTED_DECK,
+  deck_id
+});

@@ -35,15 +35,15 @@ export class DeckForm extends React.Component {
 
     return (
       <div className="test-div">
-      <form className="deck-form"
-        onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
-        {error}
-        <label htmlFor="deckName">Deck Name</label>
-        <Field component={Input} type="text" name="deckName" id="deckName" validate={[required, nonEmpty]}/>
-        <label htmlFor="deckClass">Deck Class!</label>
-        <Field component={renderSelectList} data={classes} type="text" name="deckClass" id="deckClass" />
-        <button disabled={this.props.pristine || this.props.submitting}>Save Deck!</button>
-      </form>
+        <form className="deck-form"
+          onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
+          {error}
+          <label htmlFor="deckName">Deck Name</label>
+          <Field component={Input} type="text" name="deckName" id="deckName" validate={[required, nonEmpty]}/>
+          <label htmlFor="deckClass">Deck Class!</label>
+          <Field component={renderSelectList} data={classes} type="text" name="deckClass" id="deckClass" />
+          <button disabled={this.props.pristine || this.props.submitting}>Save Deck!</button>
+        </form>
       </div>
     );
   }

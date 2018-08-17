@@ -3,7 +3,8 @@ import * as types from '../actions/decks';
 const initialState = {
   decks: [],
   loading: false,
-  error: null
+  error: null,
+  currentDeck: null
 };
 
 export const deckReducer = (state = initialState, action) => {
@@ -22,6 +23,10 @@ export const deckReducer = (state = initialState, action) => {
     return Object.assign({}, state, {
       loading: false,
       error: action.error
+    });
+  case(types.SET_SELECTED_DECK):
+    return Object.assign({}, state, {
+      currentDeck: action.deck_id
     });
   default:
     return state;

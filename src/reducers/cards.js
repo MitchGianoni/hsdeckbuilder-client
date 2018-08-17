@@ -23,6 +23,10 @@ export const cardReducer = (state=initialState, action) => {
       loading: false,
       error: action.error
     });
+  case(types.SET_SELECTED_CARD):
+    return Object.assign({}, state, {
+      currentCard: action.card_id
+    });
   default:
     return state;
   }

@@ -10,12 +10,13 @@ import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 import { authReducer } from './reducers/auth';
 import { cardReducer } from './reducers/cards';
+import { cardsInDeckReducer } from './reducers/cards-decks';
 import { deckReducer } from './reducers/decks';
 import {reducer as formReducer} from 'redux-form';
 import { setAuthToken, refreshAuthToken } from './actions/auth';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const mainReducer = combineReducers({auth: authReducer, card: cardReducer, deck: deckReducer, form: formReducer });
+const mainReducer = combineReducers({auth: authReducer, card: cardReducer, cardsDecks: cardsInDeckReducer, deck: deckReducer, form: formReducer });
 
 const store = createStore(mainReducer, composeEnhancers(applyMiddleware(thunk)));
 //store.subscribe(() => console.log(store.getState()));

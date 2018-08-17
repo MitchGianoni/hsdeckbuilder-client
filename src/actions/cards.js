@@ -19,7 +19,6 @@ export const fetchCardsError = (error) => ({
 export const FETCH_CARDS = 'FETCH_CARDS';
 export const fetchCards = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  console.log('fetch cards');
   dispatch(fetchCardsRequest());
   return fetch(`${API_BASE_URL}/cards`, {
     method: 'GET', headers: {Authorization: `Bearer ${authToken}`}})
@@ -29,3 +28,10 @@ export const fetchCards = () => (dispatch, getState) => {
     .catch(err => {dispatch(fetchCardsError(err));
     });
 };
+
+export const SET_SELECTED_CARD = 'SET_SELECTED_CARD';
+export const setSelectedCard = (card_id) => ({
+  type: SET_SELECTED_CARD,
+  card_id
+});
+
