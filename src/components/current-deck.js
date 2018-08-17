@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import { fetchCardsInDeck, addCard } from '../actions/cards-decks';
 
-class CardsInDeck extends Component {
+class CurrentDeck extends Component {
 
-  componentDidMount() {
+  clickOnDeck() {
     this.props.dispatch(fetchCardsInDeck());
   }
 
@@ -17,10 +17,20 @@ class CardsInDeck extends Component {
     this.props.dispatch(addCard(card));
   }
 
+  removeCard() {
+
+  }
+
   render() {
-    const cards = this.props.cardsInDeck;
-    const listItems = cards.map((card) => 
-      <li key={card.id}>{card.name}</li>);
+    const current = this.props.cardsInDeck;
+    const listItems = current.map((card, i) => { 
+      const card_obj = this.props.cards.find(_card => {
+        return _card.id === card.card_id;
+      });
+      return (<li key={i}>{card_obj.name}        
+        <button onClick={() => this.removeCard}>Remove</button>
+      </li>);
+    });
     return (
       <div className="currentDeck">
         <h4>Current Deck</h4>
@@ -36,8 +46,10 @@ class CardsInDeck extends Component {
 
 const mapStateToProps = state => ({
   cards: state.card.cards,
+  decks: state.deck.decks,
   currentCard: state.card.currentCard,
+  currentDeck: state.deck.currentDeck,
   cardsInDeck: state.cardsDecks.cardsInDeck
 });
 
-export default connect(mapStateToProps)(CardsInDeck);
+export default connect(mapStateToProps)(CurrentDeck);

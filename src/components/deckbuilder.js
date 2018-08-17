@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import CardList from './card-list';
 import DeckList from './deck-list';
-import CardsInDeck from './cards-in-deck';
+import CurrentDeck from './current-deck';
 import { Link } from 'react-router-dom';
+import requiresLogin from './requires-login';
 
 class Deckbuilder extends Component {
 
   render() {
     return (<div>
     <Link to="/dashboard">Dashboard</Link>
-    <CardsInDeck />
+    <CurrentDeck />
     <DeckList />
     <CardList />
     </div>);
@@ -27,4 +28,4 @@ const mapStateToProps = state => ({
   deckList: state.deck.decks
 });
 
-export default connect(mapStateToProps)(Deckbuilder);
+export default requiresLogin()(connect(mapStateToProps)(Deckbuilder));

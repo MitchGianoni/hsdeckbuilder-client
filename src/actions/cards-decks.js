@@ -18,19 +18,23 @@ export const fetchCardsInDeckError = (error) => ({
 });
 
 export const FETCH_CARDSINDECK = 'FETCH_CARDSINDECK';
-export const fetchCardsInDeck = () => (dispatch, getState) => {
+export const fetchCardsInDeck = deck_id => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  const deck_id = getState().deck.currentDeck;
   console.log('fetch cards in deck');
   dispatch(fetchCardsInDeckRequest());
   return fetch(`${API_BASE_URL}/decks/${deck_id}/cards`, {
-    method: 'GET', heaers: {Authorization: `Bearer ${authToken}`}})
+    method: 'GET', headers: {Authorization: `Bearer ${authToken}`}})
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
     .then(data => dispatch(fetchCardsInDeckSuccess(data)))
     .catch(err => {dispatch(fetchCardsInDeckError(err));
     });
 };
+
+export const ADD_CARD_TO_DECK = 'ADD_CARD_TO_DECK';
+export const addCardToDeck = (card) => ({
+  type: ADD_CARD_TO_DECK, card
+});
 
 export const addCard = card => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
@@ -46,6 +50,7 @@ export const addCard = card => (dispatch, getState) => {
   })
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
+    .then(data => {dispatch(addCardToDeck(data));})
     .catch(err => {
       const {reason, message, location} = err;
       if (reason === 'ValidationError') {

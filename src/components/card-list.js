@@ -1,29 +1,51 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchCards, setSelectedCard } from '../actions/cards';
+import Card from './card';
 
 class CardList extends Component {
+  state = {
+   start: 0,
+   end: 10 
+  }
 
   componentDidMount() {
     this.props.dispatch(fetchCards());
   }
 
   clickHandler(card_id) {
-    this.props.dispatch(setSelectedCard(card_id));
+    this.props.dispatch(setSelectedCard(card_id)); 
   }
 
-  //        <img className="card" id={card.id} src={`https://art.hearthstonejson.com/v1/render/latest/enUS/256x/${card.data.id}.png`}
-  //        alt={card.data.name} title={card.data.flavor}/>
+  nextHandler() {
+    if (this.state.end < this.props.cards.length - 9 ) {
+      this.setState({
+        start: this.state.start + 10,
+        end: this.state.end + 10
+      })
+    }
+  }
+
+  prevHandler() {
+    if (this.state.start > 9){
+      this.setState({
+        start: this.state.start - 10,
+        end: this.state.end - 10
+      })
+    }
+  }
 
   render() {
     const cards = this.props.cards;
-    const listItems = cards.map((card) => 
-      <li key={card.id} onClick={() => this.clickHandler(card.id)}>{card.name}
-      </li>);
+    const {start, end} = this.state;
+    const listItems = cards.slice(start, end).map((card) => <Card key={card.id} clickHandler={this.clickHandler.bind(this)} card={card} />);
+
     return (
       <div>
         <h2>Cards!</h2>
         <ul>{listItems}</ul>
+        <button onClick={this.prevHandler.bind(this)}>Prev 10</button>
+        <button onClick={this.nextHandler.bind(this)}>Next 10</button>
       </div>
     );
   }

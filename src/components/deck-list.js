@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchDecks, setSelectedDeck } from '../actions/decks';
+import { fetchCardsInDeck } from '../actions/cards-decks';
 
 class DeckList extends Component {
 
@@ -9,13 +10,25 @@ class DeckList extends Component {
   }
 
   clickHandler(deck_id) {
+    this.props.dispatch(fetchCardsInDeck(deck_id));
     this.props.dispatch(setSelectedDeck(deck_id));
+  }
+
+  deleteDeck() {
+
+  }
+
+  renameDeck() {
+
   }
 
   render() {
     const decks = this.props.decks;
     const listItems = decks.map((deck) => 
-      <li key={deck.id} onClick={() => this.clickHandler(deck.id)}>{deck.deckName}<button>Rename</button><button>Delete</button></li>);
+      <li key={deck.id} onClick={() => this.clickHandler(deck.id)}>{deck.deckName}
+        <button onClick={() => this.renameDeck}>Rename</button>
+        <button onClick={() => this.deleteDeck}>Delete</button>
+      </li>);
     return (
       <div>
         <h2>Decks!</h2>

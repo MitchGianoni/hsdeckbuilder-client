@@ -35,3 +35,31 @@ export const setSelectedCard = (card_id) => ({
   card_id
 });
 
+export const FETCH_CARD_REQUEST = 'FETCH_CARD_REQUEST';
+export const fetchCardRequest = () => ({
+  type: FETCH_CARD_REQUEST
+});
+export const FETCH_CARD_SUCCESS = 'FETCH_CARD_SUCCESS';
+export const fetchCardSuccess = (cards) => ({
+  type: FETCH_CARD_SUCCESS,
+  cards
+});
+export const FETCH_CARD_ERROR = 'FETCH_CARD_ERROR';
+export const fetchCardError = (error) => ({
+  type: FETCH_CARD_ERROR,
+  error
+});
+
+export const FETCH_CARD = 'FETCH_CARD';
+export const fetchCard = card_id => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  dispatch(fetchCardsRequest());
+  return fetch(`${API_BASE_URL}/cards/${card_id}`, {
+    method: 'GET', headers: {Authorization: `Bearer ${authToken}`}})
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .then(data => dispatch(fetchCardSuccess(data)))
+    .catch(err => {dispatch(fetchCardError(err));
+    });
+};
+

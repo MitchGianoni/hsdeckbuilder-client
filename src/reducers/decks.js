@@ -4,7 +4,7 @@ const initialState = {
   decks: [],
   loading: false,
   error: null,
-  currentDeck: null
+  currentDeck: []
 };
 
 export const deckReducer = (state = initialState, action) => {

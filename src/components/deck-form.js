@@ -13,8 +13,8 @@ export class DeckForm extends React.Component {
     const { deckClass, deckName } = values;
     const user_id = this.props.user.id;
     const newDeck = { user_id, deckClass, deckName };
-    return this.props.dispatch(createDeck(newDeck))
-      .then(alert('deck created'));
+    return this.props.dispatch(createDeck(newDeck));
+      //.then(alert('deck created'));
   }
 
   render() {
