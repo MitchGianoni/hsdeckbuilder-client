@@ -1,11 +1,11 @@
-.deck-form{
+.current-deck {
   grid-column: 1;
-}
-
-.random-card {
-  grid-column: 3;
 }
 
 .deck-list {
   grid-column: 2;
+}
+
+.card-list {
+  grid-column: 3;
 }

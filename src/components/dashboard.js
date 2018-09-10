@@ -5,14 +5,15 @@ import RandomCard from './randomCard';
 import DeckForm from './deck-form';
 import DeckList from './deck-list';
 import { Link } from 'react-router-dom';
+import './dashboard.css';
 
 export function Dashboard(props) {
   return (
     <div className="dashboard">
-      <DeckForm />
-      <div className="cards">
-        <RandomCard />
-        <DeckList />
+      <div className="grid-container">
+        <DeckForm className="deck-form"/>
+        <DeckList className="deck-list"/>
+        <RandomCard className="random-card"/>
       </div>
       <Link to="/deckbuilder">Deckbuilder</Link>
     </div>

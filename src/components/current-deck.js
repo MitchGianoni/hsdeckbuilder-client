@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import { fetchCardsInDeck, addCard } from '../actions/cards-decks';
+import './current-deck.css';
 
 class CurrentDeck extends Component {
 
@@ -32,7 +33,8 @@ class CurrentDeck extends Component {
       </li>);
     });
     return (
-      <div className="currentDeck">
+      <div className="current-deck">
+        <p>Click on a Deck and a Card below, then click Add Card to add it to your deck!</p>
         <h4>Current Deck</h4>
         <ul>{listItems}</ul>
         <button onClick={() => this.handleSubmit()}>Add Card</button>

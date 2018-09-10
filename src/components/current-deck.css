@@ -1,5 +1,4 @@
-.currentDeck {
-  position: absolute;
-  top: 0;
-  left: 0;
+.current-deck {
+  background-color: var(--deathknight);
+  border: solid 1px;
 }

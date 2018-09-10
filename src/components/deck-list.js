@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchDecks, setSelectedDeck } from '../actions/decks';
 import { fetchCardsInDeck } from '../actions/cards-decks';
+import './deck-list.css';
 
 class DeckList extends Component {
 
@@ -30,7 +31,7 @@ class DeckList extends Component {
         <button onClick={() => this.deleteDeck}>Delete</button>
       </li>);
     return (
-      <div>
+      <div className="deck-list">
         <h2>Decks!</h2>
         <ul>{listItems}</ul>
       </div>

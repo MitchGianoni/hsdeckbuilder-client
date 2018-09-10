@@ -1,9 +1,36 @@
+:root {
+  --deathknight: #C41F3B; /*Red*/
+  --demonhunter: #A330C9; /*Dark Magenta*/
+  --druid: #FF7D0A; /*Orange*/
+  --hunter: #ABD473; /*Green*/
+  --mage: #40C7EB; /*Light Blue*/
+  --monk: #00FF96; /*Spring Green*/
+  --paladin: #F58CBA; /*Pink*/
+  --priest: #FFFFFF; /*White*/
+  --rogue: #FFF569; /*Yellow*/
+  --shaman: #0070DE; /*Blue*/
+  --warlock: #8787ED; /*Purple*/
+  --warrior: #C79C6E; /*Tan*/
+}
+
 .App {
   text-align: center;
 }
+
+.grid-container {
+  margin: 10px;
+  max-width: 1000px;
+  display: inline-grid;
+  grid-template-columns: 300px 300px 300px;
+  border: solid 1px;
+}
+
+.form-error {
+  color: red;
+}
  
 h2 {
-  font: 400 40px/1.5 Helvetica, Verdana, sans-serif;
+  font: 400 40px/1.5 Trebuchet MS;
   margin: 0;
   padding: 0;
 }
@@ -15,28 +42,32 @@ ul {
 }
  
 li {
-  font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
-  border-bottom: 1px solid #ccc;
+  font: 200 20px/1.5 Trebuchet MS, sans-serif;
+  border-bottom: 1px solid #272727;
 }
  
 li:last-child {
   border: none;
 }
  
-li a {
-  text-decoration: none;
-  color: #000;
-  display: block;
-  width: 200px;
- 
-  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
-  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
-  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
-  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
-  transition: font-size 0.3s ease, background-color 0.3s ease;
-}
- 
-li a:hover {
-  font-size: 30px;
+li:hover {
   background: #f6f6f6;
+}
+
+a:link, a:visited {
+    max-width: 100px;
+    background-color: var(--shaman);
+    color: white;
+    padding: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center; 
+    text-decoration: none;
+    display: block;
+    border-radius: 90px;
+}
+
+a:hover, a:active {
+    background-color: var(--paladin);
 }

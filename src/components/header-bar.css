@@ -1,0 +1,8 @@
+.header-bar {
+  overflow: hidden;
+  background-color: var(--hunter);
+  padding: 20px 10px;
+  text-align: center;
+  border: solid 1px;
+  width: 100%;
+}

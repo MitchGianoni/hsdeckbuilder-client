@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchCards, setSelectedCard } from '../actions/cards';
 import Card from './card';
+import './card-list.css';
 
 class CardList extends Component {
   state = {
@@ -41,7 +42,7 @@ class CardList extends Component {
     const listItems = cards.slice(start, end).map((card) => <Card key={card.id} clickHandler={this.clickHandler.bind(this)} card={card} />);
 
     return (
-      <div>
+      <div className="card-list">
         <h2>Cards!</h2>
         <ul>{listItems}</ul>
         <button onClick={this.prevHandler.bind(this)}>Prev 10</button>
