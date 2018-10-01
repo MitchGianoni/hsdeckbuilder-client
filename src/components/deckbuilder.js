@@ -16,7 +16,6 @@ class Deckbuilder extends Component {
         <DeckList className="deck-list" />
         <CardList className="card-list" />
       </div>
-      <Link to="/dashboard">Dashboard</Link>
     </div>);
   }
   // add list of cards - update so you can click on them
