@@ -1,0 +1,8 @@
+.header-bar {
+  overflow: hidden;
+  background-color: var(--monk);
+  padding: 5px;
+  text-align: center;
+  border: solid 1px;
+  width: 100%;
+}

@@ -1,3 +1,19 @@
-.dashboard {
-  text-align: center;
+.deck-form{
+  grid-column: 1;
+}
+
+.random-card {
+  grid-column: 3;
+}
+
+.deck-list {
+  grid-column: 2;
+}
+
+.warrior {
+  background-color: var(--warrior);
+}
+
+.demonhunter {
+  background-color: var(--demonhunter);
 }

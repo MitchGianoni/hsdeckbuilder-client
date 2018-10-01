@@ -57,6 +57,31 @@ export const addCard = card => (dispatch, getState) => {
         return Promise.reject(new SubmissionError({[location]: message}));
       }
     });
-
-    // dispatch an action and you get the current state via mapstateto props
 };
+
+export const REMOVE_CARD_FROM_DECK = 'REMOVE_CARD_FROM_DECK';
+export const removeCardFromDeck = (card) => ({
+  type: REMOVE_CARD_FROM_DECK
+});
+
+export const removeCard = card_id => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
+  const currentDeck = getState().deck.currentDeck;
+  console.log('deleting card from deck');
+  return fetch(`${API_BASE_URL}/decks/${currentDeck}/cards/${card_id}`, {
+    method: 'DELETE',
+    headers: {
+      'Authorization': `Bearer ${authToken}`
+    },
+  })
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .catch(err => {
+      const {reason, message, location} = err;
+      if (reason === 'ValidationError') {
+        return Promise.reject(new SubmissionError({[location]: message}));
+      }
+    });
+};
+
+  // dispatch an action and you get the current state via mapstateto props

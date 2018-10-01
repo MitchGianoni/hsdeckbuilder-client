@@ -1,3 +1,5 @@
+const emailValidator = require('email-validator');
+
 export const required = value => (value ? undefined : 'Required');
 export const nonEmpty = value => value.trim() !== '' ? undefined : 'Cannot be empty';
 export const isTrimmed = value => value.trim() === value ? undefined : 'Cannot start or end with whitespace';
@@ -11,3 +13,5 @@ export const length = length => value => {
 };
 export const matches = field => (value, allValues) =>
   field in allValues && value.trim() === allValues[field].trim() ? undefined : 'Does not match';
+
+export const validEmail = value => emailValidator.validate(value) ? undefined : 'Must be valid email format';

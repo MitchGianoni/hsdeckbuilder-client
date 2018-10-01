@@ -1,8 +1,4 @@
 .deck-form {
-  width: 60%;
-  float: right;
-}
-
-.test-div {
-  text-align: center;
+  background-color: var(--warrior);
+  padding: 10px;
 }

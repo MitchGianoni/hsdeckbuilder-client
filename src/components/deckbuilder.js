@@ -5,15 +5,18 @@ import DeckList from './deck-list';
 import CurrentDeck from './current-deck';
 import { Link } from 'react-router-dom';
 import requiresLogin from './requires-login';
+import './deckbuilder.css';
 
 class Deckbuilder extends Component {
 
   render() {
-    return (<div>
-    <Link to="/dashboard">Dashboard</Link>
-    <CurrentDeck />
-    <DeckList />
-    <CardList />
+    return (<div className="deckbuilder">
+      <div className="grid-container">
+        <CurrentDeck className="current-deck" />
+        <DeckList className="deck-list" />
+        <CardList className="card-list" />
+      </div>
+      <Link to="/dashboard">Dashboard</Link>
     </div>);
   }
   // add list of cards - update so you can click on them

@@ -1,0 +1,11 @@
+.current-deck {
+  grid-column: 1;
+}
+
+.deck-list {
+  grid-column: 2;
+}
+
+.card-list {
+  grid-column: 3;
+}
