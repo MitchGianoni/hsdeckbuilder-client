@@ -15,6 +15,7 @@
 
 .App {
   text-align: center;
+  background-color: var(--mage);
 }
 
 .grid-container {
@@ -27,6 +28,19 @@
 
 .form-error {
   color: red;
+}
+
+button {
+    background-color: var(--rogue);
+    color: #272727;
+    text-align: center; 
+    text-decoration: none;
+    border-radius: 90px;
+    border: 1px solid #272727;
+}
+
+button:hover, button:active {
+    background-color: var(--paladin);
 }
  
 h2 {
@@ -57,8 +71,8 @@ li:hover {
 a:link, a:visited {
     max-width: 100px;
     background-color: var(--shaman);
-    color: white;
-    padding: 25px;
+    color: var(--priest);
+    padding: 10px;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
@@ -66,6 +80,7 @@ a:link, a:visited {
     text-decoration: none;
     display: block;
     border-radius: 90px;
+    border: 1px solid #272727;
 }
 
 a:hover, a:active {

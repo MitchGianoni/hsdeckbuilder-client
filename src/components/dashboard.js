@@ -11,9 +11,9 @@ export function Dashboard(props) {
   return (
     <div className="dashboard">
       <div className="grid-container">
-        <DeckForm className="deck-form"/>
+        <div className="warrior deck-form"><DeckForm /></div>
         <DeckList className="deck-list"/>
-        <RandomCard className="random-card"/>
+        <div className="demonhunter random-card"><RandomCard /></div>
       </div>
       <Link to="/deckbuilder">Deckbuilder</Link>
     </div>

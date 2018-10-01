@@ -9,3 +9,11 @@
 .deck-list {
   grid-column: 2;
 }
+
+.warrior {
+  background-color: var(--warrior);
+}
+
+.demonhunter {
+  background-color: var(--demonhunter);
+}

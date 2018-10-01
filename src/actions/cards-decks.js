@@ -73,7 +73,15 @@ export const removeCard = card_id => (dispatch, getState) => {
     headers: {
       'Authorization': `Bearer ${authToken}`
     },
-  });
+  })
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .catch(err => {
+      const {reason, message, location} = err;
+      if (reason === 'ValidationError') {
+        return Promise.reject(new SubmissionError({[location]: message}));
+      }
+    });
 };
 
   // dispatch an action and you get the current state via mapstateto props

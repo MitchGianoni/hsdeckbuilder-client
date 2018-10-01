@@ -40,14 +40,12 @@ export class App extends React.Component {
 
   render() {
     return (
-      <div className="main">
-        <div><HeaderBar /></div>
-        <div className ="App">
-          <div><Route exact path="/" component={LandingPage} /></div>
-          <div><Route exact path="/dashboard" component={Dashboard} /></div>
-          <div><Route exact path="/deckbuilder" component={Deckbuilder} /></div>
-          <div><Route exact path="/register" component={RegistrationPage} /></div>
-        </div>
+      <div className ="App">
+        <HeaderBar />
+        <Route exact path="/" component={LandingPage} />
+        <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/deckbuilder" component={Deckbuilder} />
+        <Route exact path="/register" component={RegistrationPage} />
       </div>
     );
   }

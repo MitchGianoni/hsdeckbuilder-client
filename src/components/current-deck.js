@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import { fetchCardsInDeck, addCard } from '../actions/cards-decks';
+import { fetchCardsInDeck, addCard, removeCard } from '../actions/cards-decks';
 import './current-deck.css';
 
 class CurrentDeck extends Component {
@@ -18,8 +18,9 @@ class CurrentDeck extends Component {
     this.props.dispatch(addCard(card));
   }
 
-  removeCard() {
-
+  removeCard(card) {
+    const thisCard = this.props.cardsInDeck.find(cardInDeck => cardInDeck.card_id === card.id );
+    this.props.dispatch(removeCard(thisCard.id));  
   }
 
   render() {
@@ -29,7 +30,7 @@ class CurrentDeck extends Component {
         return _card.id === card.card_id;
       });
       return (<li key={i}>{card_obj.name}        
-        <button onClick={() => this.removeCard}>Remove</button>
+        <button value={card_obj} onClick={() => this.removeCard(card_obj)}>Remove</button>
       </li>);
     });
     return (
