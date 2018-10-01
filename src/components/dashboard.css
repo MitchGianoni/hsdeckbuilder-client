@@ -6,14 +6,22 @@
   grid-column: 3;
 }
 
-.deck-list {
-  grid-column: 2;
-}
-
 .warrior {
   background-color: var(--warrior);
 }
 
 .demonhunter {
   background-color: var(--demonhunter);
+}
+
+.center {
+  background-color: var(--druid);
+  grid-column: 2;
+  padding: ;
+  border-left: solid 1px;
+  border-right: solid 1px;
+}
+
+.deckbuilder {
+  margin: 10px;
 }

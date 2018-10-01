@@ -12,10 +12,9 @@ export function Dashboard(props) {
     <div className="dashboard">
       <div className="grid-container">
         <div className="warrior deck-form"><DeckForm /></div>
-        <DeckList className="deck-list"/>
+        <div className="center"><Link className="deckbuilder" to="/deckbuilder">Deckbuilder</Link></div>
         <div className="demonhunter random-card"><RandomCard /></div>
       </div>
-      <Link to="/deckbuilder">Deckbuilder</Link>
     </div>
   );
 }
@@ -25,3 +24,5 @@ const mapStateToProps = state => ({
 });
 
 export default requiresLogin()(connect(mapStateToProps)(Dashboard));
+
+//<DeckList className="deck-list"/>

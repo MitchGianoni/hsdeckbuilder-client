@@ -24,6 +24,7 @@
   display: inline-grid;
   grid-template-columns: 300px 300px 300px;
   border: solid 1px;
+  height: 1100px;
 }
 
 .form-error {
