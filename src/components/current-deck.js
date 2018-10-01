@@ -5,10 +5,6 @@ import './current-deck.css';
 
 class CurrentDeck extends Component {
 
-  clickOnDeck() {
-    this.props.dispatch(fetchCardsInDeck());
-  }
-
   handleSubmit() {
     const selectedCard = this.props.cards.filter(card => {
       return card.id === this.props.currentCard;
@@ -20,7 +16,10 @@ class CurrentDeck extends Component {
 
   removeCard(card) {
     const thisCard = this.props.cardsInDeck.find(cardInDeck => cardInDeck.card_id === card.id );
-    this.props.dispatch(removeCard(thisCard.id));  
+    this.props.dispatch(removeCard(thisCard.id));
+    this.props.dispatch(fetchCardsInDeck(this.props.currentDeck)); 
+    // theres a bug here where sometimes a card doesnt get deleted but if you click again it works
+    // works for basic purposes but will need a refactor
   }
 
   render() {
