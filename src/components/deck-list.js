@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchDecks, setSelectedDeck } from '../actions/decks';
+import { fetchDecks, setSelectedDeck, editDeck, removeDeck } from '../actions/decks';
 import { fetchCardsInDeck } from '../actions/cards-decks';
 import './deck-list.css';
 
@@ -15,12 +15,13 @@ class DeckList extends Component {
     this.props.dispatch(setSelectedDeck(deck_id));
   }
 
-  deleteDeck() {
-
+  deleteDeck(deck_id) {
+    this.props.dispatch(removeDeck(deck_id));
+    this.props.dispatch(fetchDecks());
   }
 
-  renameDeck() {
-
+  renameDeck(deck_id) {
+    this.props.dispatch(editDeck(deck_id,'poopadin'));
   }
 
   render() {
@@ -28,8 +29,8 @@ class DeckList extends Component {
     const listItems = decks.map((deck) => 
       <li key={deck.id}>{deck.deckName}
         <button onClick={() => this.clickHandler(deck.id)}>Select</button>
-        <button onClick={() => this.renameDeck}>Rename</button>
-        <button onClick={() => this.deleteDeck}>Delete</button>
+        <button onClick={() => this.renameDeck(deck.id)}>Rename</button>
+        <button onClick={() => this.deleteDeck(deck.id)}>Delete</button>
       </li>);
     return (
       <div className="deck-list">

@@ -60,7 +60,7 @@ export const addCard = card => (dispatch, getState) => {
 };
 
 export const REMOVE_CARD_FROM_DECK = 'REMOVE_CARD_FROM_DECK';
-export const removeCardFromDeck = (card) => ({
+export const removeCardFromDeck = () => ({
   type: REMOVE_CARD_FROM_DECK
 });
 

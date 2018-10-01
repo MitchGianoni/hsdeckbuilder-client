@@ -18,11 +18,6 @@ class Deckbuilder extends Component {
       </div>
     </div>);
   }
-  // add list of cards - update so you can click on them
-  // instead of currently selected deck, action to put card into deck which makes backend call
-  // when that call succeeds, update the deck in state
-  // deck view that shows what cards are in the deck
-  // left list of decks, right list of cards, below list of cards that are currently in deck
 }
 
 const mapStateToProps = state => ({
