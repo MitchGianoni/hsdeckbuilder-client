@@ -16,10 +16,8 @@ class CurrentDeck extends Component {
 
   removeCard(card) {
     const thisCard = this.props.cardsInDeck.find(cardInDeck => cardInDeck.card_id === card.id );
-    this.props.dispatch(removeCard(thisCard.id));
-    this.props.dispatch(fetchCardsInDeck(this.props.currentDeck)); 
-    // theres a bug here where sometimes a card doesnt get deleted but if you click again it works
-    // works for basic purposes but will need a refactor
+    this.props.dispatch(removeCard(thisCard.id))
+      .then(() => {this.props.dispatch(fetchCardsInDeck(this.props.currentDeck));});
   }
 
   render() {
