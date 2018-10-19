@@ -30,10 +30,22 @@ class CurrentDeck extends Component {
         <button value={card_obj} onClick={() => this.removeCard(card_obj)}>Remove</button>
       </li>);
     });
+    let deckname;
+    if (this.props.currentDeck > 0) {
+      const displayDeck = this.props.decks.find(_deck => {
+        return _deck.id === this.props.currentDeck;
+      });
+      if (!displayDeck) {
+        deckname = 'Select a Deck';
+      } else {
+        deckname = displayDeck.deckName;
+      }
+    } 
     return (
       <div className="current-deck">
-        <p>Click on a Deck and a Card below, then click Add Card to add it to your deck!</p>
+        <p>Select a Deck and a Card, then click Add Card to add it to your deck!</p>
         <h4>Current Deck</h4>
+        <h4>Deck: {deckname}</h4>
         <ul>{listItems}</ul>
         <button onClick={() => this.handleSubmit()}>Add Card</button>
       </div>

@@ -27,15 +27,22 @@ class DeckList extends Component {
     this.props.dispatch(fetchDecks());
   }
 
-  renameDeck(deck_id) {
-    this.props.dispatch(editDeck(deck_id,'placeholder'));
-    this.setState({renamingDeck: deck_id});
-  }
+  // need to fix renaming decks
+  // renameDeck(deck_id) {
+  //   this.props.dispatch(editDeck(deck_id,'placeholder'));
+  //   this.setState({renamingDeck: deck_id});
+  //   console.log('bacon:', this.state.renamingDeck);
+  // }
+
+    renameDeck(deck_id) {
+      alert('Feature in development!');
+    }
+
 
   render() {
     const decks = this.props.decks;
     const listItems = decks.map((deck) => 
-      <li key={deck.id}>{this.state.renamingDeck === deck.id ? <input type="text" value={deck.deckName}></input> : deck.deckName}
+      <li key={deck.id}>{this.state.renamingDeck === deck.id ? <input type="text" defaultValue={deck.deckName}></input> : deck.deckName}
         <button onClick={() => this.clickHandler(deck.id)}>Select</button>
         <button onClick={() => this.renameDeck(deck.id)}>Rename</button>
         <button onClick={() => this.deleteDeck(deck.id)}>Delete</button>
@@ -43,6 +50,8 @@ class DeckList extends Component {
     return (
       <div className="deck-list">
         <h2>Decks!</h2>
+        <h4>Click on deckbuilder to add cards</h4>
+        <h4>Click on dashboard to create more decks</h4>
         <ul>{listItems}</ul>
       </div>
     );

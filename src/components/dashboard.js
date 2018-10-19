@@ -12,7 +12,7 @@ export function Dashboard(props) {
     <div className="dashboard">
       <div className="grid-container">
         <div className="warrior deck-form"><DeckForm /></div>
-        <div className="center"><Link className="deckbuilder" to="/deckbuilder">Deckbuilder</Link></div>
+        <div className="center"><DeckList /></div>
         <div className="demonhunter random-card"><RandomCard /></div>
       </div>
     </div>

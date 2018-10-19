@@ -13,6 +13,8 @@ export function LandingPage(props) {
   return (
     <div className="home">
       <h2>Welcome to Deckbuilder!</h2>
+      <h4>Create an account to save your favorite</h4>
+      <h4>Hearthstone decks!</h4>
       <LoginForm />
       <Link to="/register">Sign Up!</Link>
     </div>

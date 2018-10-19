@@ -6,3 +6,8 @@
   border: solid 1px;
   width: 100%;
 }
+
+.inline {
+  display: inline-block;
+  width: 200px;
+}
