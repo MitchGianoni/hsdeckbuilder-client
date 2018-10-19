@@ -1,5 +1,4 @@
 .header-bar {
-  overflow: hidden;
   background-color: var(--monk);
   padding: 5px;
   text-align: center;
@@ -11,3 +10,5 @@
   display: inline-block;
   width: 200px;
 }
+
+
