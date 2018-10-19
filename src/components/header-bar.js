@@ -28,8 +28,8 @@ export class HeaderBar extends React.Component {
     return (
       <div className="header-bar">
         <h1>DECKBUILDER</h1>
-        <div class="inline">{dashboardButton}</div>
-        <div class="inline">{deckbuilder}</div>
+        <div className="inline">{dashboardButton}</div>
+        <div className="inline">{deckbuilder}</div>
         {logOutButton}
       </div>
     );

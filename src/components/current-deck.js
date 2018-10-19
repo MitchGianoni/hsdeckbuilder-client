@@ -44,8 +44,7 @@ class CurrentDeck extends Component {
     return (
       <div className="current-deck">
         <p>Select a Deck and a Card, then click Add Card to add it to your deck!</p>
-        <h4>Current Deck</h4>
-        <h4>Deck: {deckname}</h4>
+        <h4>Current Deck: {deckname}</h4>
         <ul>{listItems}</ul>
         <button onClick={() => this.handleSubmit()}>Add Card</button>
       </div>

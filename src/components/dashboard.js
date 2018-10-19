@@ -4,7 +4,6 @@ import requiresLogin from './requires-login';
 import RandomCard from './randomCard';
 import DeckForm from './deck-form';
 import DeckList from './deck-list';
-import { Link } from 'react-router-dom';
 import './dashboard.css';
 
 export function Dashboard(props) {

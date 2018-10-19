@@ -90,7 +90,6 @@ export const removeDeckRequest = () => ({
 
 export const removeDeck = deck_id => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  const currentDeck = getState().deck.currentDeck;
   console.log('deleting deck');
   return fetch(`${API_BASE_URL}/decks/${deck_id}`, {
     method: 'DELETE',
