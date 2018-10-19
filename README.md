@@ -36,3 +36,10 @@ password: bacon123
   - bcrypt/jwt/passport
 
 - All cards imported into database from api.hearthstonejson.com
+
+## Future Features:
+
+- Enable users to rename decks
+- Search cards by name
+- Deck limitations to reflect actual game rules
+- Paste and save deck codes directly into app! (stretch goal)
