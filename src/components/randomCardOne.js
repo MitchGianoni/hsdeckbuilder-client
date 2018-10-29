@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchRandomCard } from '../actions/cards';
 
-class RandomCard extends Component {
+class RandomCardOne extends Component {
 
   componentDidMount() {
     this.props.dispatch(fetchRandomCard());
@@ -21,4 +21,4 @@ class RandomCard extends Component {
 const mapStateToProps = state => ({
   randomCards: state.card.randomCard
 });
-export default connect(mapStateToProps)(RandomCard);
+export default connect(mapStateToProps)(RandomCardOne);

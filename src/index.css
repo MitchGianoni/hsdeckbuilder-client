@@ -1,6 +1,23 @@
+:root {
+  --deathknight: #C41F3B; /*Red*/
+  --one: #A3D5FF; /*Winter Wizard*/
+  --two: #F0F2EF; /*Anti-Flash-White*/
+  --three: #2E5266; /*Dark Slate Gray*/
+  --four: #A69f98; /*Spanish Gray*/
+  --five: #6E8898; /*Light Slate Gray*/
+  --red: #B22222;
+  --black: #272727;
+  --white: #F4FFF8;
+  font: 400 20px/1.5 Courier New;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  background-color: var(--mage);
+  background: linear-gradient(to bottom, var(--four) 0%,var(--two) 44%,var(--four) 100%);
+  color: var(--black);
+}
+
+header {
+  color: var(--black);
 }

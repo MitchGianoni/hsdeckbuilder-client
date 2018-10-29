@@ -2,12 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Route, withRouter } from 'react-router-dom'; 
 import HeaderBar from './header-bar';
+import Footer from './footer';
 import LandingPage from './landing-page';
 import Dashboard from './dashboard';
 import Deckbuilder from './deckbuilder';
 import RegistrationPage from './registration-page';
 import { refreshAuthToken } from '../actions/auth';
 import './styles/App.css';
+import './styles/float-grid.css';
 
 export class App extends React.Component {
   componentDidUpdate(prevProps) {
@@ -41,11 +43,18 @@ export class App extends React.Component {
   render() {
     return (
       <div className ="App">
-        <HeaderBar />
-        <Route exact path="/" component={LandingPage} />
-        <Route exact path="/dashboard" component={Dashboard} />
-        <Route exact path="/deckbuilder" component={Deckbuilder} />
-        <Route exact path="/register" component={RegistrationPage} />
+        <header className="row">
+          <HeaderBar />
+        </header>
+        <main className="row">
+          <Route exact path="/" component={LandingPage} />
+          <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/deckbuilder" component={Deckbuilder} />
+          <Route exact path="/register" component={RegistrationPage} />
+        </main>
+        <footer className="row">
+          <Footer />
+        </footer>
       </div>
     );
   }

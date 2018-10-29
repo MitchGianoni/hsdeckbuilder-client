@@ -1,0 +1,7 @@
+.login-form {
+  background: linear-gradient(to bottom, var(--three) 0%,var(--five) 44%,var(--three) 100%);
+  text-align: center;
+  border: solid 1px;
+  box-shadow: 0vw 1vh 5vh 1px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}

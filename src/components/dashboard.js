@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './requires-login';
-import RandomCard from './randomCard';
+import LeeroyCard from './randomCard';
 import DeckForm from './deck-form';
 import DeckList from './deck-list';
 import './styles/dashboard.css';
@@ -9,13 +9,14 @@ import './styles/float-grid.css';
 
 export function Dashboard(props) {
   return (
-    <div className="dashboard row">
-      <div className="grid-container">
-        <div className="warrior deck-form"><DeckForm /></div>
-        <div className="center"><DeckList /></div>
-        <div className="demonhunter random-card"><RandomCard /></div>
-      </div>
-    </div>
+    <section className="dashboard row">
+      <section className="col-6">
+        <DeckList />
+      </section>
+      <section className="col-6">
+        <DeckForm />
+      </section>
+    </section>
   );
 }
 

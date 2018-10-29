@@ -63,3 +63,29 @@ export const fetchCard = card_id => (dispatch, getState) => {
     });
 };
 
+export const FETCH_RANDOM_CARD_REQUEST = 'FETCH_RANDOM_CARD_REQUEST';
+export const fetchRandomCardRequest = () => ({
+  type: FETCH_RANDOM_CARD_REQUEST
+});
+export const FETCH_RANDOM_CARD_SUCCESS = 'FETCH_RANDOM_CARD_SUCCESS';
+export const fetchRandomCardSuccess = (randomCard) => ({
+  type: FETCH_RANDOM_CARD_SUCCESS,
+  randomCard
+});
+export const FETCH_RANDOM_CARD_ERROR = 'FETCH_RANDOM_CARD_ERROR';
+export const fetchRandomCardError = (error) => ({
+  type: FETCH_RANDOM_CARD_ERROR,
+  error
+});
+
+export const FETCH_RANDOM_CARD = 'FETCH_RANDOM_CARD';
+export const fetchRandomCard = () => (dispatch, getState) => {
+  dispatch(fetchRandomCardRequest());
+  return fetch(`${API_BASE_URL}/cards/random`, {
+    method: 'GET'})
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .then(data => dispatch(fetchRandomCardSuccess(data)))
+    .catch(err => {dispatch(fetchRandomCardError(err));
+    });
+};

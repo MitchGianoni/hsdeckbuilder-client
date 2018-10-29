@@ -3,6 +3,10 @@ import {Field, reduxForm, focus } from 'redux-form';
 import Input from './input';
 import { login } from '../actions/auth';
 import { required, nonEmpty } from '../utils/validators';
+import { Link} from 'react-router-dom';
+import './styles/float-grid.css';
+import './styles/login-form.css';
+
 
 export class LoginForm extends React.Component {
   onSubmit(values) {
@@ -13,21 +17,26 @@ export class LoginForm extends React.Component {
     let error;
     if (this.props.error) {
       error = (
-        <div className="form-error" aria-live="polite">
+        <section className="form-error" aria-live="polite">
           {this.props.error}
-        </div>
+        </section>
       );
     }
     return (
-      <form className="login-form"
-        onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
-        {error}
-        <label htmlFor="username">Username</label>
-        <Field component={Input} type="text" name="username" id="username" validate={[required, nonEmpty]}/>
-        <label htmlFor="password">Password</label>
-        <Field component={Input} type="password" name="password" id="password" validate={[required, nonEmpty]}/>
-        <button disabled={this.props.pristine || this.props.submitting}>Log in</button>
-      </form>
+      <section className="container row">
+        <form className="login-form"
+          onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
+          {error}
+          <label htmlFor="username">Username</label>
+          <Field component={Input} type="text" name="username" id="username" validate={[required, nonEmpty]}/>
+          <label htmlFor="password">Password</label>
+          <Field component={Input} type="password" name="password" id="password" validate={[required, nonEmpty]}/>
+          <section className="row">
+            <button className="col-12" disabled={this.props.pristine || this.props.submitting}>Log In</button>
+            <Link className="col-12" to="/register">Sign Up!</Link>
+          </section>
+        </form>
+      </section>
     );
   }
 }

@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import { clearAuth } from '../actions/auth';
 import { clearAuthToken } from '../utils/local-storage';
 import { Link } from 'react-router-dom';
-import './styles/header-bar.css';
+import './styles/footer.css';
 import './styles/float-grid.css';
 
-export class HeaderBar extends React.Component {
+export class Footer extends React.Component {
   logOut() {
     this.props.dispatch(clearAuth());
     clearAuthToken();
@@ -27,15 +27,10 @@ export class HeaderBar extends React.Component {
       );
     }
     return (
-      <section className="header-bar row">
-        <section className="label row">
-          <p className="col-4 invis">_</p>
-          <h1 className="title col-4">Deckbuilder</h1>
-          <p className="col-4 invis">_</p>
-        </section>
-        <section className="col-4">{dashboardButton}</section>
+      <section className="footer row">
+        <section className="route col-4">{dashboardButton}</section>
         <section className="col-4">{logOutButton}</section>
-        <section className="col-4">{deckbuilder}</section>
+        <section className="route col-4">{deckbuilder}</section>
       </section>
     );
   }
@@ -45,4 +40,4 @@ const mapStateToProps = state => ({
   loggedIn: state.auth.currentUser !== null
 });
 
-export default connect(mapStateToProps)(HeaderBar);
+export default connect(mapStateToProps)(Footer);

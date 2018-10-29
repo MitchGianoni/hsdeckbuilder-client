@@ -3,7 +3,8 @@ import * as types from '../actions/cards';
 const initialState = {
   cards: [],
   loading: false,
-  error: null
+  error: null,
+  randomCard: ''
 };
 
 export const cardReducer = (state=initialState, action) => {
@@ -41,6 +42,21 @@ export const cardReducer = (state=initialState, action) => {
   case(types.SET_SELECTED_CARD):
     return Object.assign({}, state, {
       currentCard: action.card_id
+    });
+  case(types.FETCH_RANDOM_CARD_REQUEST):
+    return Object.assign({}, state, {
+      loading: true
+    });
+  case(types.FETCH_RANDOM_CARD_SUCCESS):
+    return Object.assign({}, state, {
+      loading: false,
+      error: null,
+      randomCard: action.randomCard
+    });
+  case(types.FETCH_RANDOM_CARD_ERROR):
+    return Object.assign({}, state, {
+      loading: false,
+      error: action.error
     });
   default:
     return state;

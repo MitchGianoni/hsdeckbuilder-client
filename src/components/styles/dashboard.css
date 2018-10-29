@@ -1,27 +1,15 @@
 .deck-form{
-  grid-column: 1;
+
 }
 
 .random-card {
-  grid-column: 3;
-}
 
-.warrior {
-  background-color: var(--warrior);
-}
-
-.demonhunter {
-  background-color: var(--demonhunter);
-}
-
-.center {
-  background-color: var(--druid);
-  grid-column: 2;
-  padding: ;
-  border-left: solid 1px;
-  border-right: solid 1px;
 }
 
 .deckbuilder {
   margin: 10px;
+}
+
+.dashboard {
+  text-align: center;
 }

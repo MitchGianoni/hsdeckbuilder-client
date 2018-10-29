@@ -1,7 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import RegistrationForm from './registration-form';
+import RandomCardOne from './randomCardOne';
+import RandomCardTwo from './randomCardTwo';
 
 export function RegistrationPage(props) {
   // If we are logged in (which happens automatically when 
@@ -10,11 +12,20 @@ export function RegistrationPage(props) {
     return <Redirect to="/dashboard" />;
   } 
   return (
-    <div className="home">
+    <section className="home">
       <h2>Register to begin building decks!</h2>
-      <RegistrationForm />
-      <Link to="/">Login Form</Link>
-    </div>);
+      <section className="container row">
+        <section className="col-4">
+          <RandomCardOne  />
+        </section>
+        <section className="col-4">
+          <RegistrationForm />
+        </section>
+        <section className="col-4">
+          <RandomCardTwo  />
+        </section>
+      </section>
+    </section>);
 }
 
 const mapStateToProps = state => ({

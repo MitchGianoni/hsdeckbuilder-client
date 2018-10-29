@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchRandomCard } from '../actions/cards';
 
-class RandomCard extends Component {
+class RandomCardTwo extends Component {
 
   componentDidMount() {
     this.props.dispatch(fetchRandomCard());
@@ -10,7 +10,7 @@ class RandomCard extends Component {
 
   render() {
     //const card = this.props.cards.length > 0 ? this.props.cards[Math.floor(Math.random()*this.props.cards.length)]: null;
-    const card = this.props.randomCards[0];
+    const card = this.props.randomCards[1];
     return <div>
       {card && <img className="card" id={card.id} src={`https://art.hearthstonejson.com/v1/render/latest/enUS/256x/${card.data.id}.png`}
         alt={card.data.name} title={card.data.flavor}/>}
@@ -21,4 +21,4 @@ class RandomCard extends Component {
 const mapStateToProps = state => ({
   randomCards: state.card.randomCard
 });
-export default connect(mapStateToProps)(RandomCard);
+export default connect(mapStateToProps)(RandomCardTwo);

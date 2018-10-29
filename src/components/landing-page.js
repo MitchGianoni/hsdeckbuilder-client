@@ -1,8 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom';
-
+import { Redirect } from 'react-router-dom';
 import LoginForm from './login-form';
+import RandomCardOne from './randomCardOne';
+import RandomCardTwo from './randomCardTwo';
+import './styles/landing-page.css';
+import './styles/float-grid.css';
 
 export function LandingPage(props) {
   // If we are logged in redirect straight to the user's dashboard
@@ -11,13 +14,22 @@ export function LandingPage(props) {
   }
 
   return (
-    <div className="home">
+    <section className="home">
       <h2>Welcome to Deckbuilder!</h2>
       <h4>Create an account to save your favorite</h4>
       <h4>Hearthstone decks!</h4>
-      <LoginForm />
-      <Link to="/register">Sign Up!</Link>
-    </div>
+      <section className="container row">
+        <section className="col-4">
+          <RandomCardOne  />
+        </section>
+        <section className="col-4">
+          <LoginForm />
+        </section>
+        <section className="col-4">
+          <RandomCardTwo  />
+        </section>
+      </section>
+    </section>
   );
 }
 
