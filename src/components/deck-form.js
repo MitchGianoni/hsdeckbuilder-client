@@ -6,7 +6,7 @@ import { required, nonEmpty } from '../utils/validators';
 import { createDeck } from '../actions/decks';
 import { SelectList } from 'react-widgets';
 import 'react-widgets/dist/css/react-widgets.css';
-import './deck-form.css';
+import './styles/deck-form.css';
 
 export class DeckForm extends React.Component {
   onSubmit(values) {

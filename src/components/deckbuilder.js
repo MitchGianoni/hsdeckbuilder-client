@@ -4,7 +4,7 @@ import CardList from './card-list';
 import DeckList from './deck-list';
 import CurrentDeck from './current-deck';
 import requiresLogin from './requires-login';
-import './deckbuilder.css';
+import './styles/deckbuilder.css';
 
 class Deckbuilder extends Component {
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchCards, setSelectedCard } from '../actions/cards';
 import Card from './card';
-import './card-list.css';
+import './styles/card-list.css';
 
 class CardList extends Component {
   state = {

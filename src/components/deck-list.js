@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchDecks, setSelectedDeck, editDeck, removeDeck } from '../actions/decks';
 import { fetchCardsInDeck } from '../actions/cards-decks';
-import './deck-list.css';
+import './styles/deck-list.css';
 
 class DeckList extends Component {
   constructor(props) {
@@ -25,6 +25,7 @@ class DeckList extends Component {
   deleteDeck(deck_id) {
     this.props.dispatch(removeDeck(deck_id));
     this.props.dispatch(fetchDecks());
+    // put fetch deck inside response of remove deck action
   }
 
   // need to fix renaming decks

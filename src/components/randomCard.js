@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchCards } from '../actions/cards';
-import './randomCard.css';
+import './styles/randomCard.css';
 
 class RandomCard extends Component {
 

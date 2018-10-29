@@ -1,14 +1,7 @@
 .header-bar {
   background-color: var(--monk);
-  padding: 5px;
   text-align: center;
   border: solid 1px;
-  width: 100%;
-}
-
-.inline {
-  display: inline-block;
-  width: 200px;
 }
 
 

@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { clearAuth } from '../actions/auth';
 import { clearAuthToken } from '../utils/local-storage';
 import { Link } from 'react-router-dom';
-import './header-bar.css';
+import './styles/header-bar.css';
+import './styles/float-grid.css';
 
 export class HeaderBar extends React.Component {
   logOut() {
@@ -26,7 +27,7 @@ export class HeaderBar extends React.Component {
       );
     }
     return (
-      <div className="header-bar">
+      <div className="header-bar row">
         <h1>DECKBUILDER</h1>
         <div className="inline">{dashboardButton}</div>
         <div className="inline">{deckbuilder}</div>

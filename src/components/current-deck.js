@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import { fetchCardsInDeck, addCard, removeCard } from '../actions/cards-decks';
-import './current-deck.css';
+import './styles/current-deck.css';
 
 class CurrentDeck extends Component {
 
