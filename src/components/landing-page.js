@@ -15,9 +15,13 @@ export function LandingPage(props) {
 
   return (
     <section className="home">
-      <h2>Welcome to Deckbuilder!</h2>
-      <h4>Create an account to save your favorite</h4>
-      <h4>Hearthstone decks!</h4>
+      <section className="intro row">
+        <h2 className="col-12">Welcome to Deckbuilder!</h2>
+        <h4 className="col-12">Hearthstone, originally Hearthstone: Heroes of Warcraft, is a free-to-play online collectible card video game developed and published by Blizzard Entertainment. 
+        Create an account to save your favorite Hearthstone decks!</h4>
+        <h4 className="col-6">Demo User: demo123</h4>
+        <h4 className="col-6">Demo Pass: password1</h4>
+      </section>
       <section className="container row">
         <section className="col-4">
           <RandomCardOne  />

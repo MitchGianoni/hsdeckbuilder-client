@@ -6,12 +6,18 @@ import './styles/current-deck.css';
 class CurrentDeck extends Component {
 
   handleSubmit() {
+    if (this.props.currentCard !== undefined) {
     const selectedCard = this.props.cards.filter(card => {
       return card.id === this.props.currentCard;
     });
     const rarity = selectedCard[0].data.rarity;
     const card = { card_id: this.props.currentCard, rarity: rarity };
     this.props.dispatch(addCard(card));
+     } else if (this.props.currentDeck === undefined){
+      alert('Please select a deck');
+     } else {
+      alert('Please select a card.');
+     }
   }
 
   removeCard(card) {

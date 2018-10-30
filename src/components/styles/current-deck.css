@@ -1,4 +1,4 @@
 .current-deck {
-  background-color: var(--deathknight);
+  background: linear-gradient(to bottom, var(--four) 0%,var(--two) 44%,var(--four) 100%);
   border: solid 1px;
 }

@@ -1,4 +1,14 @@
 .deck-list {
-  background-color: var(--druid);
+  background: linear-gradient(to bottom, var(--one) 0%,var(--five) 44%,var(--one) 100%);
+  text-align: center;
   border: solid 1px;
+  box-shadow: 0vw 1vh 5vh 1px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#deck-list ul {
+  list-style-type: none;
 }

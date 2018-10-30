@@ -30,8 +30,9 @@ export class DeckForm extends React.Component {
     let classes = ['DRUID', 'HUNTER', 'MAGE', 'PALADIN', 
       'PRIEST','ROGUE', 'SHAMAN', 'WARLOCK', 'WARRIOR'];
     
-    const renderSelectList = ({input, data}) => 
-      <SelectList {...input} onBlur={() => input.onBlur()} data={data}/>;
+    const renderSelectList = ({input, data}) => (
+      <SelectList {...input} onBlur={() => input.onBlur()} data={data}/>
+    );
 
     return (
       <div className="test-div">
@@ -40,8 +41,8 @@ export class DeckForm extends React.Component {
           {error}
           <label htmlFor="deckName">Deck Name</label>
           <Field component={Input} type="text" name="deckName" id="deckName" validate={[required, nonEmpty]}/>
-          <label htmlFor="deckClass">Deck Class!</label>
-          <Field component={renderSelectList} data={classes} type="text" name="deckClass" id="deckClass" />
+          <label htmlFor="deckClass">{this.validate === undefined ? 'Deck Class!' : 'Required'}</label>
+          <Field component={renderSelectList} data={classes} type="text" name="deckClass" id="deckClass" validate={[required]} />
           <button disabled={this.props.pristine || this.props.submitting}>Save Deck!</button>
         </form>
       </div>

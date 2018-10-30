@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchCards, setSelectedCard } from '../actions/cards';
 import Card from './card';
 import './styles/card-list.css';
+import './styles/float-grid.css';
 
 class CardList extends Component {
   state = {
@@ -42,12 +43,12 @@ class CardList extends Component {
     const listItems = cards.slice(start, end).map((card) => <Card key={card.id} clickHandler={this.clickHandler.bind(this)} card={card} />);
 
     return (
-      <div className="card-list">
-        <h2>Cards!</h2>
-        <ul>{listItems}</ul>
+      <section id="card-list" className="card-list row">
+        <h2 className="col-12">Cards!</h2>
+        <ul className="col-12">{listItems}</ul>
         <button onClick={this.prevHandler.bind(this)}>Prev 15</button>
         <button onClick={this.nextHandler.bind(this)}>Next 15</button>
-      </div>
+      </section>
     );
   }
 }

@@ -49,6 +49,7 @@ export const addCard = card => (dispatch, getState) => {
     body: JSON.stringify(card)
   })
     .then(res => normalizeResponseErrors(res))
+    .then(() => dispatch(fetchCardsInDeck()))
     .then(res => res.json())
     .then(data => {dispatch(addCardToDeck(data));})
     .catch(err => {
