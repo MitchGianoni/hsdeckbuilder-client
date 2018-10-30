@@ -45,6 +45,7 @@ class CardList extends Component {
     return (
       <section id="card-list" className="card-list row">
         <h2 className="col-12">Cards!</h2>
+        <h4 className="col-12">Just click a card name to select one</h4>
         <ul className="col-12">{listItems}</ul>
         <button onClick={this.prevHandler.bind(this)}>Prev 15</button>
         <button onClick={this.nextHandler.bind(this)}>Next 15</button>

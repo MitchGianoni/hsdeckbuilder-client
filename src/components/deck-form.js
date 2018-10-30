@@ -14,7 +14,6 @@ export class DeckForm extends React.Component {
     const user_id = this.props.user.id;
     const newDeck = { user_id, deckClass, deckName };
     return this.props.dispatch(createDeck(newDeck));
-      //.then(alert('deck created'));
   }
 
   render() {
@@ -35,7 +34,7 @@ export class DeckForm extends React.Component {
     );
 
     return (
-      <div className="test-div">
+      <section className="test-div">
         <form className="deck-form"
           onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
           {error}
@@ -45,7 +44,7 @@ export class DeckForm extends React.Component {
           <Field component={renderSelectList} data={classes} type="text" name="deckClass" id="deckClass" validate={[required]} />
           <button disabled={this.props.pristine || this.props.submitting}>Save Deck!</button>
         </form>
-      </div>
+      </section>
     );
   }
 

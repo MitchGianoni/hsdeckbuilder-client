@@ -34,7 +34,8 @@ class DeckList extends Component {
   //   this.setState({renamingDeck: deck_id});
   //   console.log('bacon:', this.state.renamingDeck);
   // }
-
+  // <button onClick={() => this.renameDeck(deck.id)}>Rename</button>
+  
   renameDeck(deck_id) {
     alert('Feature in development!');
   }
@@ -45,7 +46,6 @@ class DeckList extends Component {
     const listItems = decks.map((deck) => 
       <li key={deck.id}>{this.state.renamingDeck === deck.id ? <input type="text" defaultValue={deck.deckName}></input> : deck.deckName}
         <button onClick={() => this.clickHandler(deck.id)}>Select</button>
-        <button onClick={() => this.renameDeck(deck.id)}>Rename</button>
         <button onClick={() => this.deleteDeck(deck.id)}>Delete</button>
       </li>);
     return (

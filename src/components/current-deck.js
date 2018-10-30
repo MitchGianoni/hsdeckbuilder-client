@@ -6,16 +6,14 @@ import './styles/current-deck.css';
 class CurrentDeck extends Component {
 
   handleSubmit() {
-    if (this.props.currentCard !== undefined) {
+    if (this.props.currentCard !== undefined && this.props.currentDeck >= 1) {
       const selectedCard = this.props.cards.filter(card => {
         return card.id === this.props.currentCard;
       });
       const rarity = selectedCard[0].data.rarity;
       const card = { card_id: this.props.currentCard, rarity: rarity };
       this.props.dispatch(addCard(card));
-    } else {
-      alert('Please select a card');
-    }
+    } 
   }
 
   removeCard(card) {
@@ -25,6 +23,16 @@ class CurrentDeck extends Component {
   }
 
   render() {
+    let alert;
+    if (this.props.currentCard === undefined && this.props.currentDeck < 1) {
+      alert = (<p>Please select a card and deck</p>);
+    } else if (this.props.currentCard === undefined) {
+      alert =(<p>Please select a card</p>);
+    } else if (this.props.currentDeck < 1) {
+      alert = (<p>Please select a deck</p>);
+    } else {
+      alert = '';
+    }
     const current = this.props.cardsInDeck;
     const listItems = current.map((card, i) => { 
       const card_obj = this.props.cards.find(_card => {
@@ -49,15 +57,13 @@ class CurrentDeck extends Component {
       <section id="current-deck" className="current-deck">
         <p>Select a Deck and a Card, then click Add Card to add it to your deck!</p>
         <h4>Current Deck: {deckname}</h4>
+        <h4 className="alert">{alert}</h4>
         <ul>{listItems}</ul>
         <button onClick={() => this.handleSubmit()}>Add Card</button>
       </section>
     );
   }
 }
-
-// when you click on a deck , dispatch an action with deck id that sets current deck in the state, when its in the state pull it into the component using
-// mapstate to props
 
 const mapStateToProps = state => ({
   cards: state.card.cards,
