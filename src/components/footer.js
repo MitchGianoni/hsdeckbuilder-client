@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { clearAuth } from '../actions/auth';
 import { clearAuthToken } from '../utils/local-storage';
-import { Link } from 'react-router-dom';
 import './styles/footer.css';
 import './styles/float-grid.css';
 

@@ -1,7 +1,12 @@
 .card-list {
   background: linear-gradient(to bottom, var(--four) 0%,var(--two) 44%,var(--four) 100%);
+  text-align: center;
   border: solid 1px;
-  
+  box-shadow: 0vw 1vh 5vh 1px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 #card-list ul {

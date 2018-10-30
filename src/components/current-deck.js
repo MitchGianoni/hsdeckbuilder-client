@@ -13,10 +13,8 @@ class CurrentDeck extends Component {
       const rarity = selectedCard[0].data.rarity;
       const card = { card_id: this.props.currentCard, rarity: rarity };
       this.props.dispatch(addCard(card));
-    } else if (this.props.currentDeck === undefined){
-      alert('Please select a deck');
     } else {
-      alert('Please select a card.');
+      alert('Please select a card');
     }
   }
 
@@ -48,7 +46,7 @@ class CurrentDeck extends Component {
       }
     } 
     return (
-      <section className="current-deck">
+      <section id="current-deck" className="current-deck">
         <p>Select a Deck and a Card, then click Add Card to add it to your deck!</p>
         <h4>Current Deck: {deckname}</h4>
         <ul>{listItems}</ul>
