@@ -7,17 +7,17 @@ class CurrentDeck extends Component {
 
   handleSubmit() {
     if (this.props.currentCard !== undefined) {
-    const selectedCard = this.props.cards.filter(card => {
-      return card.id === this.props.currentCard;
-    });
-    const rarity = selectedCard[0].data.rarity;
-    const card = { card_id: this.props.currentCard, rarity: rarity };
-    this.props.dispatch(addCard(card));
-     } else if (this.props.currentDeck === undefined){
+      const selectedCard = this.props.cards.filter(card => {
+        return card.id === this.props.currentCard;
+      });
+      const rarity = selectedCard[0].data.rarity;
+      const card = { card_id: this.props.currentCard, rarity: rarity };
+      this.props.dispatch(addCard(card));
+    } else if (this.props.currentDeck === undefined){
       alert('Please select a deck');
-     } else {
+    } else {
       alert('Please select a card.');
-     }
+    }
   }
 
   removeCard(card) {
@@ -48,12 +48,12 @@ class CurrentDeck extends Component {
       }
     } 
     return (
-      <div className="current-deck">
+      <section className="current-deck">
         <p>Select a Deck and a Card, then click Add Card to add it to your deck!</p>
         <h4>Current Deck: {deckname}</h4>
         <ul>{listItems}</ul>
         <button onClick={() => this.handleSubmit()}>Add Card</button>
-      </div>
+      </section>
     );
   }
 }

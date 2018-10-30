@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchDecks, setSelectedDeck, editDeck, removeDeck } from '../actions/decks';
+import { fetchDecks, setSelectedDeck, removeDeck } from '../actions/decks';
 import { fetchCardsInDeck } from '../actions/cards-decks';
 import './styles/deck-list.css';
 import './styles/float-grid.css';
@@ -51,7 +51,7 @@ class DeckList extends Component {
     return (
       <section id="deck-list" className="deck-list row">
         <h2 className="col-12">Decks!</h2>
-        <h4 clasSName="col-12">Click on deckbuilder to add cards</h4>
+        <h4 className="col-12">Click on deckbuilder to add cards</h4>
         <h4 className="col-12">Click on dashboard to create more decks</h4>
         <ul className="col-12">{listItems}</ul>
       </section>

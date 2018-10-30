@@ -9,13 +9,13 @@ import './styles/deckbuilder.css';
 class Deckbuilder extends Component {
 
   render() {
-    return (<div className="deckbuilder">
-      <div className="grid-container">
+    return (<section className="deckbuilder">
+      <section className="grid-container">
         <CurrentDeck className="current-deck" />
         <DeckList className="deck-list" />
         <CardList className="card-list" />
-      </div>
-    </div>);
+      </section>
+    </section>);
   }
 }
 

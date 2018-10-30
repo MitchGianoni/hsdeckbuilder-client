@@ -25,7 +25,6 @@ class Card extends Component {
           alt={fullCard.data.name} title={fullCard.data.flavor}/><p>{card.name}</p></li>
       : <li onClick={() => this.onClick(card.id)}>{card.name}</li>;
     return toRender;
-    //<div> {card && } </div>;
   }
 }
 
