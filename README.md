@@ -5,7 +5,7 @@ An app created to enable users to save extra Hearthstone decks, as the game itse
 ## Link to Live Application:
 
 Heroku: https://hs-deckbuilder-mg.herokuapp.com/
-
+ 
 Server Repo: https://github.com/MitchGianoni/hsdeckbuilder-server
 
 ## Dummy User:
