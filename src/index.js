@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter as Router} from 'react-router-dom';
 import { Provider } from 'react-redux';
+import Favicon from 'react-favicon';
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { loadAuthToken } from './utils/local-storage';
@@ -30,10 +31,13 @@ if (authToken) {
 }
 
 ReactDOM.render(
+  <div>
+  <Favicon url="https://s3.us-east-2.amazonaws.com/mg-icons/hsicon.png" />
   <Provider store={store}>
     <Router>
       <App />
     </Router>
-  </Provider>, 
+  </Provider>
+  </div>, 
   document.getElementById('root'));
 registerServiceWorker();
