@@ -98,6 +98,7 @@ export const removeDeck = deck_id => (dispatch, getState) => {
     },
   })
     .then(res => normalizeResponseErrors(res))
+    .then(() => dispatch(fetchDecks()))
     .then(res => res.json())
     .catch(err => {
       const {reason, message, location} = err;

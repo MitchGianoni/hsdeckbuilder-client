@@ -5,6 +5,7 @@
   --three: #2E5266; /*Dark Slate Gray*/
   --four: #A69f98; /*Spanish Gray*/
   --five: #6E8898; /*Light Slate Gray*/
+  --six: #3E92CC; 
   --red: #B22222;
   --black: #272727;
   --white: #F4FFF8;
@@ -18,6 +19,6 @@ body {
   color: var(--black);
 }
 
-header {
+header, footer {
   color: var(--black);
 }

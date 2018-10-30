@@ -24,7 +24,6 @@ class DeckList extends Component {
 
   deleteDeck(deck_id) {
     this.props.dispatch(removeDeck(deck_id));
-    this.props.dispatch(fetchDecks());
     // put fetch deck inside response of remove deck action
   }
 
@@ -35,9 +34,9 @@ class DeckList extends Component {
   //   console.log('bacon:', this.state.renamingDeck);
   // }
 
-    renameDeck(deck_id) {
-      alert('Feature in development!');
-    }
+  renameDeck(deck_id) {
+    alert('Feature in development!');
+  }
 
 
   render() {

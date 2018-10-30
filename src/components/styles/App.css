@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  background-color: var(--mage);
 }
 
 .form-error {
@@ -39,7 +38,7 @@ a:link, a:visited, button {
   border-radius: 10px;
   padding: 5px;
   margin: 10px;
-  background: linear-gradient(to bottom, var(--four) 0%,var(--two) 44%,var(--four) 100%);
+  background: linear-gradient(to bottom, var(--one) 0%,var(--six) 100%);
 }
 
 button {
@@ -50,5 +49,5 @@ button {
 }
 
 a:hover, a:active, button:hover, button:active {
-  background: linear-gradient(to bottom, var(--three) 0%,var(--one) 44%,var(--three) 100%);
+  background: linear-gradient(to bottom, var(--one) 0%,var(--three) 100%);
 }

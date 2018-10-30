@@ -28,6 +28,21 @@ export const deckReducer = (state = initialState, action) => {
     return Object.assign({}, state, {
       currentDeck: action.deck_id
     });
+  case(types.EDIT_DECK_REQUEST):
+    return Object.assign({}, state, {
+      loading: true
+    });
+  case(types.EDIT_DECK_SUCCESS):
+    return Object.assign({}, state, {
+      loading: false,
+      error: null, 
+      renamingDeck: true
+    });
+  case(types.REMOVE_DECK_REQUEST):
+    return Object.assign({}, state, {
+      loading: false,
+      error: null
+    });
   default:
     return state;
   }

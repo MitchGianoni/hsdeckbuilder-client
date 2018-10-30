@@ -14,23 +14,17 @@ export class Footer extends React.Component {
 
   render() {
     // Only render the log out button if we are logged in!
-    let logOutButton, dashboardButton, deckbuilder;
+    let logOutButton;
     if (this.props.loggedIn) {
-      dashboardButton = (
-        <Link to="/dashboard">Dashboard</Link>
-      );
-      deckbuilder = (
-        <Link className="deckbuilder" to="/deckbuilder">Deckbuilder</Link>
-      ); 
       logOutButton = (
         <button onClick={() => this.logOut()}>Log Out</button>
       );
+    } else {
+      logOutButton = (<p className="invis">_</p>);
     }
     return (
       <section className="footer row">
-        <section className="route col-4">{dashboardButton}</section>
-        <section className="col-4">{logOutButton}</section>
-        <section className="route col-4">{deckbuilder}</section>
+        <section className="col-12">{logOutButton}</section>
       </section>
     );
   }
