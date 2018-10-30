@@ -35,7 +35,7 @@ export class DeckForm extends React.Component {
 
     return (
       <section className="test-div">
-        <form className="deck-form"
+        <form id="deck-form" className="deck-form"
           onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
           {error}
           <label htmlFor="deckName">Deck Name</label>

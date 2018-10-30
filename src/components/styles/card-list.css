@@ -1,5 +1,5 @@
 .card-list {
-  background: var(--four);
+  background: linear-gradient(to bottom, var(--one) 0%,var(--five) 44%,var(--one) 100%);
   text-align: center;
   border: solid 1px;
   box-shadow: 0vw 1vh 5vh 1px rgba(0, 0, 0, 0.5);
@@ -13,6 +13,9 @@
   list-style-type: none;
   background: var(--six);
   padding: 20px;
+  border: solid 1px;
+  box-shadow: 0vw 1vh 5vh 1px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
 }
 
 #card-list ol li {
@@ -22,13 +25,16 @@
 }
 
 #card-list ul li {
-    background: var(--one);
-    margin: 5px;
-    cursor: pointer;
+  background: linear-gradient(to bottom, var(--one) 0%,var(--six) 100%);
+  margin: 5px;
+  cursor: pointer;
+  border: solid 1px;
+  box-shadow: 0vw 1vh 5vh 1px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
 }
 
 #card-list li:hover {
-
+  background: linear-gradient(to bottom, var(--one) 0%,var(--three) 100%);
 }
 
 #card-list h2,h4 {
