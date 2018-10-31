@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { clearAuth } from '../actions/auth';
 import { clearAuthToken } from '../utils/local-storage';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import * as brandIcons from '@fortawesome/free-brands-svg-icons';
 import './styles/footer.css';
 import './styles/float-grid.css';
 
@@ -23,7 +25,12 @@ export class Footer extends React.Component {
     }
     return (
       <section className="footer row">
-        <section className="col-12">{logOutButton}</section>
+        <section className="col-6 route">
+          <a href="https://github.com/MitchGianoni/hsdeckbuilder-client" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={brandIcons.faGithub} className="icon" alt="GitHub" title="GitHub" />
+          </a>
+        </section>
+        <section className="col-6">{logOutButton}</section>
       </section>
     );
   }
