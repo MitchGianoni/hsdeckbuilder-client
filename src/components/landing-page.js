@@ -2,8 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import LoginForm from './login-form';
-import RandomCardOne from './randomCardOne';
-import RandomCardTwo from './randomCardTwo';
+import StaticLeeroy from './staticLeeroy';
 import './styles/landing-page.css';
 import './styles/float-grid.css';
 
@@ -24,13 +23,13 @@ export function LandingPage(props) {
       </section>
       <section className="container row">
         <section className="col-4">
-          <RandomCardOne  />
+          <StaticLeeroy />
         </section>
         <section className="col-4">
           <LoginForm />
         </section>
         <section className="col-4">
-          <RandomCardTwo  />
+          <StaticLeeroy />
         </section>
       </section>
     </section>
