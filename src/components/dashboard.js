@@ -15,7 +15,6 @@ export function Dashboard(props) {
       </section>
       <section className="col-6">
         <DeckForm />
-        <LeeroyCard />
       </section>
     </section>
   );
